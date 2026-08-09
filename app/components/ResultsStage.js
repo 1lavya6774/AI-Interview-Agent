@@ -3,12 +3,12 @@
 export default function ResultsStage({ grade, role, questions, reset }) {
   const verdictColor =
     grade.verdict === "Strong Hire"
-      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
+      ? "bg-cyan-500/20 text-cyan-300"
       : grade.verdict === "Hire"
-      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400"
+      ? "bg-emerald-500/20 text-emerald-300"
       : grade.verdict === "Borderline"
-      ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-400"
-      : "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400";
+      ? "bg-orange-500/20 text-orange-300"
+      : "bg-red-500/20 text-red-300";
 
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#05060f]">
@@ -71,9 +71,9 @@ export default function ResultsStage({ grade, role, questions, reset }) {
                     <span
                       className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
                         item.score >= 8
-                          ? "bg-green-900/40 text-green-400"
+                          ? "bg-cyan-900/40 text-cyan-400"
                           : item.score >= 5
-                          ? "bg-yellow-900/40 text-yellow-400"
+                          ? "bg-orange-900/40 text-orange-400"
                           : "bg-red-900/40 text-red-400"
                       }`}
                     >

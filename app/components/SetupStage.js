@@ -74,12 +74,11 @@ export default function SetupStage({
         }}
       />
 
-      {/* Background grid pattern */}
+      {/* Subtle dotted background */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: `radial(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0),
-            radial(circle at 1px 1px, rgba(34,211,238,0.3) 1px, transparent 0)`,
+          backgroundImage: `radial(circle at 1px 1px, rgba(34,211,238,0.5) 1px, transparent 0)`,
           backgroundSize: "24px 24px",
         }}
       />
