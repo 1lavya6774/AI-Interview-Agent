@@ -1,0 +1,10 @@
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.56.1:3000
+- Environments: .env.local
+✓ Ready in 580ms
+✓ Running next.config.mjs took 36ms
+
+ GET / 200 in 431ms (next.js: 249ms, application-code: 181ms)
+ POST /api/interview 200 in 1902ms (next.js: 223ms, application-code: 1678ms)
+ POST /api/interview 200 in 1150ms (next.js: 18ms, application-code: 1132ms)
