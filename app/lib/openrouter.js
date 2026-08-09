@@ -5,7 +5,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
 });
 
-export async function chat(messages, { model = "openrouter/auto", json = false } = {}) {
+export async function chat(
+  messages,
+  { model = "openrouter/auto", json = false } = {}
+) {
   const response = await openai.chat.completions.create({
     model,
     messages,
@@ -13,5 +16,9 @@ export async function chat(messages, { model = "openrouter/auto", json = false }
     response_format: json ? { type: "json_object" } : undefined,
   });
 
-  return response.choices[0].message.content;
+  const content = response.choices[0]?.message?.content;
+  if (!content) {
+    throw new Error("Empty response from model");
+  }
+  return content;
 }

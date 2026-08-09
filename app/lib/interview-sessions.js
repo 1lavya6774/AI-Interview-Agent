@@ -1,13 +1,16 @@
-import { randomUUID } from "crypto";
+import { randomUUID } from "node:crypto";
 
-// In-memory session store keyed by UUID
+// In-memory session store keyed by UUID. Sessions live for the life of the
+// server process — perfectly fine for local dev and single-instance deploys.
 const sessions = new Map();
 
-export function createSession({ resumeText, role, questions }) {
+export function createSession({ resumeText, role, questions, interviewType, difficulty }) {
   const sessionId = randomUUID();
   sessions.set(sessionId, {
     resumeText,
     role,
+    interviewType: interviewType || "Mixed",
+    difficulty: difficulty || "Mid",
     questions,
     answers: [],
     questionIndex: 0,

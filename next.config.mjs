@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "http://localhost:4000/api/:path*",
-      },
-    ];
-  },
-};
+// No rewrites needed — the API is served by Next.js route handlers
+// (app/api/*), so the app runs standalone with `npm run dev`.
+const nextConfig = {};
 
 export default nextConfig;
