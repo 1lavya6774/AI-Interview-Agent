@@ -58,7 +58,7 @@ export default function GradingStage({
             </h2>
             <p
               key={gradingStep}
-              className="mt-3 animate-fade-in text-sm text-zinc-400"
+              className="mt-3 animate-fade-in-up text-sm text-zinc-400"
             >
               {step}
             </p>
