@@ -73,13 +73,34 @@ export default function SetupStage({
             "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34,211,238,0.15), rgba(168,85,247,0.08) 40%, transparent 70%)",
         }}
       />
+
+      {/* Floating animated elements */}
+      <div className="pointer-events-none absolute top-1/4 left-1/3 h-2 w-2 rounded-full bg-cyan-400 opacity-20 shadow-[0_0_20px_rgba(34,211,238,0.5)] animate-float-pulse" />
+      <div className="pointer-events-none absolute top-3/4 right-1/4 h-2.5 w-2.5 rounded-full bg-purple-400 opacity-20 shadow-[0_0_20px_rgba(168,85,247,0.5)] animate-float-pulse" style={{ animationDelay: "0.5s" }} />
+      <div className="pointer-events-none absolute top-1/3 right-1/3 h-1.5 w-1.5 rounded-full bg-pink-400 opacity-20 shadow-[0_0_15px_rgba(232,72,159,0.5)] animate-float-pulse" style={{ animationDelay: "1s" }} />
+
       <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-1 flex-col px-4 py-10">
         {/* Header */}
-        <header className="mb-6 text-center">
-          <h1 className="text-2xl font-bold text-white">AI Interview Agent</h1>
-          <p className="mt-1 text-sm text-zinc-400">
-            Practice with a personalized AI interviewer
+        <header className="mb-8 text-center">
+          <h1 className="text-4xl font-extrabold bg-gradient-text mb-2">
+            AI Interview Agent
+          </h1>
+          <p className="text-zinc-400 text-sm max-w-md mx-auto leading-relaxed">
+            Practice real interviews with a personalized AI interviewer. Paste your resume, pick a role, and get scored with detailed feedback.
           </p>
+
+          {/* Feature highlights */}
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 py-1.5 text-xs text-cyan-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" /> Personalized to your resume
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-500/10 px-3 py-1.5 text-xs text-purple-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-purple-400" /> Real-time AI grading
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/10 px-3 py-1.5 text-xs text-pink-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-pink-400" /> Instant feedback
+            </span>
+          </div>
         </header>
 
         {/* Progress stepper */}
