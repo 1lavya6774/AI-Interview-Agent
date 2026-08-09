@@ -14,7 +14,7 @@ function getClient() {
 
 export async function chat(
   messages,
-  { model = "meta-llama/llama-3.1-8b-it:free", json = false } = {}
+  { model = "openai/gpt-oss-20b:free", json = false } = {}
 ) {
   const response = await getClient().chat.completions.create({
     model,
