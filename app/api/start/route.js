@@ -61,11 +61,10 @@ export async function POST(request) {
     raw = await chat([systemMessage, userMessage], { json: true });
   } catch (error) {
     console.error("Start chat error:", error);
-    const code = error?.status || error?.code;
     const msg = error?.message || "Unknown error";
-    if (code === 401 || msg.includes("401")) {
+    if (msg.includes("Missing credentials") || msg.includes("401") || msg.includes("Unauthorized")) {
       return NextResponse.json(
-        { error: "OPENROUTER_API_KEY not configured. Set it in your environment variables.", debug: msg },
+        { error: "OPENROUTER_API_KEY is not set. Add it to your environment variables.", debug: msg },
         { status: 502 }
       );
     }
